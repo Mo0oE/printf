@@ -21,6 +21,9 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+
+			if (*format == '\0')
+				break;
 			if (*format == 'c')
 			{
 				_putchar(va_arg(list, int));
