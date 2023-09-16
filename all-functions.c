@@ -1,27 +1,29 @@
 #include "main.h"
 
 /**
- * printstring - function to print strings
+ * printString - function to print strings
  * @str: the input string
  * Description: ...
  * Return: number of characters printed
  */
 
-int printstring(char *str)
+int printString(char *str)
 {
 	int i = 0;
 
-	while (str[i])
+	if (str)
 	{
-		_putchar(str[i]);
-		i++;
+		for (i = 0; str[i] != '\0'; i++)
+		{
+			_putchar(str[i]);
+		}
 	}
 	return (i);
 }
 
 
 /**
- * printint - the function to print decimal numbers
+ * printInt - the function to print decimal numbers
  * @n: the input to be printed
  * Return: number of printed numbers
  */
@@ -33,7 +35,11 @@ int printint(int n)
 
 	if (n < 0)
 	{
+<<<<<<< HEAD
 		putchar('-');
+=======
+		_putchar('-');
+>>>>>>> f3b41d9da8c23c9fa7ba66177bebd9fb31983c45
 		n = -n;
 	}
 	else if (n == 0)
@@ -53,7 +59,11 @@ int printint(int n)
 
 	for (i = idx - 1; i >= 0; i--)
 	{
+<<<<<<< HEAD
 		putchar(buffer[i]);
+=======
+		_putchar(buffer[i]);
+>>>>>>> f3b41d9da8c23c9fa7ba66177bebd9fb31983c45
 		count++;
 	}
 

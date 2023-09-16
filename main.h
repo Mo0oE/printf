@@ -10,12 +10,8 @@
 
 
 int _putchar(char str);
-int printstring(char *str);
+int printString(char *str);
 int printInt(int n);
-
-
-
-
 
 
 int _printf(const char *format, ...);
