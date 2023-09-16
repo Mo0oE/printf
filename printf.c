@@ -13,17 +13,12 @@ int _printf(const char *format, ...)
 	char *str;
 	va_list list;
 
-	if (!format)
-		return (-1);
 	va_start(list, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-
-			if (*format == '\0')
-				break;
 			if (*format == 'c')
 			{
 				_putchar(va_arg(list, int));
@@ -38,8 +33,7 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				str = va_arg(list, char *);
-				if (str)
-					count += printString(str);
+				count += printString(str);
 			}
 		}
 		else
