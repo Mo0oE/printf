@@ -26,23 +26,36 @@ int printstring(char *str)
  * Return: number of printed numbers
 */
 
-int printint(int n)
+int printInt(int n)
 {
-	unsigned int n1, i = 1;
+	char buffer[10];
+	int i, idx, digit, count = 0;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		n1 = -n;
+	    putchar('-');
+	    n = -n;
 	}
-	else
-		n1 = n;
-	if ((n1 / 10) > 0)
+	else if (n == 0)
 	{
-		i++;
-		print_number(n1 / 10);
+	    putchar('0');
 	}
 
-	_putchar('0' + (n1 % 10));
-	return (i);
+	idx = 0;
+	while (n > 0)
+	{
+	    digit = n % 10;
+	    buffer[idx] = digit + '0';
+
+	    idx++;
+	    n /= 10;
+	}
+
+	for (i = idx - 1; i >= 0; i--)
+	{
+	    putchar(buffer[i]);
+	    count++;
+	}
+
+	return count;
 }

@@ -11,7 +11,7 @@
 
 int _putchar(char str);
 int printstring(char *str);
-int printint(int n);
+int printInt(int n);
 
 
 
