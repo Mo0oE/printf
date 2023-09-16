@@ -18,6 +18,7 @@ int printString(char *str)
 			_putchar(str[i]);
 		}
 	}
+	i--;
 	return (i);
 }
 
