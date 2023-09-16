@@ -16,7 +16,6 @@ int printstring(char *str)
 		_putchar(str[i]);
 		i++;
 	}
-	i--;
 	return (i);
 }
 
@@ -25,38 +24,38 @@ int printstring(char *str)
  * printint - the function to print decimal numbers
  * @n: the input to be printed
  * Return: number of printed numbers
-*/
+ */
 
-int printInt(int n)
+int printint(int n)
 {
 	char buffer[10];
 	int i, idx, digit, count = 0;
 
 	if (n < 0)
 	{
-	    putchar('-');
-	    n = -n;
+		putchar('-');
+		n = -n;
 	}
 	else if (n == 0)
 	{
-	    putchar('0');
+		putchar('0');
 	}
 
 	idx = 0;
 	while (n > 0)
 	{
-	    digit = n % 10;
-	    buffer[idx] = digit + '0';
+		digit = n % 10;
+		buffer[idx] = digit + '0';
 
-	    idx++;
-	    n /= 10;
+		idx++;
+		n /= 10;
 	}
 
 	for (i = idx - 1; i >= 0; i--)
 	{
-	    putchar(buffer[i]);
-	    count++;
+		putchar(buffer[i]);
+		count++;
 	}
 
-	return count;
+	return (count);
 }
