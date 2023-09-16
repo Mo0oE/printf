@@ -36,7 +36,7 @@ int printInt(int n)
 
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		n = -n;
 	}
 	else if (n == 0)
