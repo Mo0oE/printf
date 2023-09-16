@@ -18,32 +18,7 @@ int printint(int n);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int _printf(const char *format, ...);
 
 
 
