@@ -13,7 +13,7 @@ int printString(char *str)
 
 	while (str[i] != '\0')
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
 	return (i);
