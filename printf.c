@@ -10,8 +10,11 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
+	char *str;
 	va_list list;
 
+	if (!format)
+		return (-1);
 	va_start(list, format);
 	while (*format)
 	{
@@ -31,7 +34,9 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-				count += printString(va_arg(list, char *));
+				str = va_arg(list, char *);
+				if (str)
+					count += printString(str);
 			}
 		}
 		else
@@ -44,3 +49,4 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
+
