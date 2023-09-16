@@ -28,18 +28,14 @@ int printString(char *str)
  * Return: number of printed numbers
  */
 
-int printint(int n)
+int printInt(int n)
 {
 	char buffer[10];
 	int i, idx, digit, count = 0;
 
 	if (n < 0)
 	{
-<<<<<<< HEAD
-		putchar('-');
-=======
 		_putchar('-');
->>>>>>> f3b41d9da8c23c9fa7ba66177bebd9fb31983c45
 		n = -n;
 	}
 	else if (n == 0)
@@ -59,11 +55,7 @@ int printint(int n)
 
 	for (i = idx - 1; i >= 0; i--)
 	{
-<<<<<<< HEAD
-		putchar(buffer[i]);
-=======
 		_putchar(buffer[i]);
->>>>>>> f3b41d9da8c23c9fa7ba66177bebd9fb31983c45
 		count++;
 	}
 
