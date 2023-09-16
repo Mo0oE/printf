@@ -15,6 +15,7 @@ int main(void)
 	count = _printf("%s\n", str);
 	printf("%i\n", count);
 	count = printf("%s\n", str);
+	_printf("another test for Hello! %s\n", str);
 	printf("%i\n", count);
 	count = _printf("that's my: %c\n", c);
 	printf("that's my: %c\n%i\n", c, count);
