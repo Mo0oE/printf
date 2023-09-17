@@ -9,12 +9,12 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
+	int i, spaces = 0, count = 0;
 	char *str;
 	va_list list;
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
-                 return (-1);
+		return (-1);
 	va_start(list, format);
 	while (*format)
 	{
@@ -23,24 +23,24 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				break;
-
+			if (*format >= '0' && *format <= '9')
+			{
+				while (*format >= '0' && *format <= '9')
+					spaces = spaces * 10 + (*format - '0'), format++;
+				for (i = 0; i < spaces; i++)
+					_putchar(' '), count++;
+			}
 			if (*format == 'c')
 				_putchar(va_arg(list, int)), count++;
-
 			else if (*format == '%')
 				_putchar('%'), count++;
-
 			else if (*format == 's')
 				str = va_arg(list, char *), count += printString(str);
-
 			else
 				_putchar(*format), count++;
 		}
 		else
-		{
-			_putchar(*format);
-			count++;
-		}
+			_putchar(*format), count++;
 		format++;
 	}
 	va_end(list);
