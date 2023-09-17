@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, spaces = 0, count = 0;
+	int count = 0;
 	char *str;
 	va_list list;
 
@@ -23,13 +23,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				break;
-			if (*format >= '0' && *format <= '9')
-			{
-				while (*format >= '0' && *format <= '9')
-					spaces = spaces * 10 + (*format - '0'), format++;
-				for (i = 0; i < spaces; i++)
-					_putchar(' '), count++;
-			}
+
 			if (*format == 'c')
 				_putchar(va_arg(list, int)), count++;
 			else if (*format == '%')
