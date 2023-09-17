@@ -39,10 +39,6 @@ int _printf(const char *format, ...)
 				str = va_arg(list, char *);
 				count += printString(str);
 			}
-			else if (*format == 'b')
-			{
-				count += print_binary(va_arg(list, int));
-			}
 		}
 		else
 		{
