@@ -12,6 +12,7 @@
 int _putchar(char str);
 int printString(char *str);
 int printInt(int n);
+int print_binary(int n);
 
 
 int _printf(const char *format, ...);
