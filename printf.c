@@ -5,7 +5,7 @@
  * @format: the text input
  * @...: the argument
  * Return: number of all printed characters
-*/
+ */
 
 int _printf(const char *format, ...)
 {
@@ -13,32 +13,28 @@ int _printf(const char *format, ...)
 	char *str;
 	va_list list;
 
+	if (!format)
+		return (-1);
 	va_start(list, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-
 			if (*format == '\0')
 				break;
 
 			if (*format == 'c')
-			{
-				_putchar(va_arg(list, int));
-				count++;
+				_putchar(va_arg(list, int)), count++;
 
-			}
 			else if (*format == '%')
-			{
-				_putchar('%');
-				count++;
-			}
+				_putchar('%'), count++;
+
 			else if (*format == 's')
-			{
-				str = va_arg(list, char *);
-				count += printString(str);
-			}
+				str = va_arg(list, char *), count += printString(str);
+
+			else
+				_putchar(*format), count++;
 		}
 		else
 		{
