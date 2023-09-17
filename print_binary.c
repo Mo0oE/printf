@@ -9,9 +9,15 @@
 
 int print_binary(int n)
 {
-	int i, j, binary[32];
+	int i, j, binary[8 * sizeof(int)];
 
-	if (n == 0)
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+	else if (n == 0)
 	{
 		_putchar('0');
 		return (1);
