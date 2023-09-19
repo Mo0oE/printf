@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * printString - function to print strings
@@ -81,11 +82,11 @@ int print_binary(int n)
  * Description: aNOne
  */
 
-void print_number(long long int n)
+void print_number(long int n)
 {
 	if (n == INT_MIN)
 	{
-		print_number(-(long long)INT_MIN);
+		print_number(-(long)INT_MIN);
 	}
 	else if (n < 0)
 	{
