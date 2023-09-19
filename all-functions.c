@@ -93,7 +93,7 @@ void print_number(int n)
 	}
 	if ((n1 / 10) != 0)
 		print_number(n1 / 10);
-	_putchar ('0' + (n1 % 10));
+	_putchar ((n1 % 10) + '0');
 
 }
 
