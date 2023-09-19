@@ -82,7 +82,7 @@ int print_binary(int n)
  * Description: aNOne
  */
 
-void print_number(long int n)
+void print_number(int n)
 {
 	unsigned int n1;
 
