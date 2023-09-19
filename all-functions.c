@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * printString - function to print strings
@@ -83,19 +84,26 @@ int print_binary(int n)
 
 void print_number(int n)
 {
-	unsigned int n1;
-
-	n1 = n;
-	if (n < 0)
+	if (n == INT_MIN)
 	{
 		_putchar('-');
-		n1 = -n;
+		print_number(INT_MAX / 10);
+		_putchar((INT_MAX % 10) + '1');
 	}
-
-	if ((n1 / 10) != 0)
-		print_number(n1 / 10);
-
-	_putchar((n1 % 10) + '0');
+	else if (n < 0)
+	{
+		_putchar('-');
+		print_number(-n);
+	}
+	else if (n >= 10)
+	{
+		print_number(n / 10);
+		_putchar((n % 10) + '0');
+	}
+	else
+	{
+		_putchar(n + '0');
+	}
 }
 
 /**
