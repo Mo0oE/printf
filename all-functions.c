@@ -84,24 +84,17 @@ int print_binary(int n)
 
 void print_number(long int n)
 {
-	if (n == INT_MIN)
-	{
-		print_number(-(long)INT_MIN);
-	}
-	else if (n < 0)
+	unsigned int n1;
+
+	n1 = n;
+	if (n < 0)
 	{
 		_putchar('-');
-		print_number(-n);
+		n1 = -n;
 	}
-	else if (n >= 10)
-	{
-		print_number(n / 10);
-		_putchar((n % 10) + '0');
-	}
-	else
-	{
-		_putchar(n + '0');
-	}
+	if ((n1 / 10) != 0)
+		print_number(n1 / 10);
+	_putchar((n1 % 10) + '0');
 }
 
 /**
