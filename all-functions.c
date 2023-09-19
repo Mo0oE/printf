@@ -11,7 +11,9 @@ int printString(char *str)
 {
 	int i = 0;
 
-	while (str[i] != '\0')
+	if (!str)
+		return (_printf("(null)"));
+	while (str[i] != '\0' && str)
 	{
 		_putchar(str[i]);
 		i++;
