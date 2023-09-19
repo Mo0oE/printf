@@ -36,6 +36,10 @@ int _printf(const char *format, ...)
 				num = va_arg(list, int), print_number(num), count += number_nums(num);
 			else if (*format == 'b')
 				num = va_arg(list, int), count += print_binary(num);
+			else if (*format == 'r')
+				str = va_arg(list, char *), count += print_reverse(str);
+			else if (*format == 'R')
+				str = va_arg(list, char *), count += printROT13(str);
 			else
 				_putchar(*format), count++;
 		}
