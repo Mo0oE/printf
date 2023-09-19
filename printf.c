@@ -20,10 +20,9 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			format++;
-			if (*format == '\0')
+			if (*(format + 1) == '\0')
 				break;
-
+			format++;
 			if (*format == 'c')
 				num = va_arg(list, int), _putchar(num), count++;
 			else if (*format == '%')
