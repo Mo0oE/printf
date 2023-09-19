@@ -83,18 +83,31 @@ int print_binary(int n)
 
 void print_number(int n)
 {
-	unsigned int n1;
+	char buffer[20];
+	int i, idx = 0;
 
-	n1 = n;
 	if (n < 0)
 	{
-		_putchar('-');
-		n1 = -n;
+		putchar('-');
+		n = -n;
 	}
-	if ((n1 / 10) != 0)
-		print_number(n1 / 10);
-	_putchar ((n1 % 10) + '0');
+	else if (n == 0)
+	{
+		putchar('0');
+		return;
+	}
 
+	while (n > 0)
+	{
+		buffer[idx] = (n % 10) + '0';
+		idx++;
+		n /= 10;
+	}
+
+	for (i = idx - 1; i >= 0; i--)
+	{
+		_putchar(buffer[i]);
+	}
 }
 
 /**
