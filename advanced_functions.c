@@ -10,24 +10,24 @@
 
 int print_reverse(char *str)
 {
-	int idx, count = 0;
+	int i, len = 0;
 
-	if (str)
+	if (str == NULL)
 	{
-		for (idx = 0; *str; str++)
-		{
-			idx++;
-			count++;
-		}
-
-		str--;
-		for (; idx >= 0; idx--, str--)
-		{
-			_putchar(*str);
-		}
+		return (0);
 	}
 
-	return (count);
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+
+	for (i = len - 1; i >= 0; i--)
+	{
+		_putchar(str[i]);
+	}
+
+	return (len);
 }
 
 /**
