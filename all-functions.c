@@ -32,10 +32,7 @@ int printString(char *str)
 
 int _putchar(char str)
 {
-	if (str)
-		return (write(1, &str, 1));
-	else
-		return (0);
+	return (write(1, &str, 1));
 }
 
 
