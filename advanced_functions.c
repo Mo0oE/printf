@@ -85,7 +85,7 @@ int printROT13(char *str)
 int print_address(void *ptr)
 {
 	char buffer[20];
-	int i, idx, digit, count = 0;
+	int i, j, idx, digit, count = 0;
 	uintptr_t adrs = (uintptr_t)ptr;
 
 	_putchar('0');
@@ -102,7 +102,7 @@ int print_address(void *ptr)
 	}
 
 	if (idx < 8)
-		for (int j = 0; j < 8 - idx; j++)
+		for (j = 0; j < 8 - idx; j++)
 			count++, _putchar('0');
 
 	for (i = idx - 1; i >= 0; i--)
