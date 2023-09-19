@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 				str = va_arg(list, char *), count += printString(str);
 			else if (*format == 'i' || *format == 'd')
 				num = va_arg(list, int), print_number(num), count += number_nums(num);
+			else if (*format == 'b')
+				num = va_arg(list, int), count += print_binary(num);
 			else
 				_putchar(*format), count++;
 		}
