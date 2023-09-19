@@ -30,8 +30,8 @@ int _printf(const char *format, ...)
 				_putchar('%'), count++;
 			else if (*format == 's')
 				str = va_arg(list, char *), count += printString(str);
-			else if (*format == 'i' || *format =='d')
-				num = va_arg(list, int), print_number(num) , count += number_nums(num);
+			else if (*format == 'i' || *format == 'd')
+				num = va_arg(list, int), print_number(num), count += number_nums(num);
 			else
 				_putchar(*format), count++;
 		}

@@ -117,7 +117,7 @@ int number_nums(int n)
 
 	while (i > 10)
 	{
-		count ++;
+		count++;
 		i /= 10;
 	}
 	return (count);
