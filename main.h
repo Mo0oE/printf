@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdint.h>
 
 
 int _putchar(char str);
@@ -18,6 +19,7 @@ int number_nums(int n);
 int print_reverse(char *str);
 char rot13(char c);
 int printROT13(char *str);
+int print_address(void *ptr);
 
 int _printf(const char *format, ...);
 

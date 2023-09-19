@@ -15,9 +15,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	else if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-
 	va_start(list, format);
 	while (*format != '\0' && format)
 	{
@@ -40,6 +37,8 @@ int _printf(const char *format, ...)
 				str = va_arg(list, char *), count += print_reverse(str);
 			else if (*format == 'R')
 				str = va_arg(list, char *), count += printROT13(str);
+			else if (*format == 'p')
+				count += print_address(va_arg(list, void *));
 			else
 				_putchar(*format), count++;
 		}
@@ -50,4 +49,3 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
-
