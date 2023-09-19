@@ -37,8 +37,6 @@ int _printf(const char *format, ...)
 				str = va_arg(list, char *), count += print_reverse(str);
 			else if (*format == 'R')
 				str = va_arg(list, char *), count += printROT13(str);
-			else if (*format == 'p')
-				count += print_address(va_arg(list, void *));
 			else
 				_putchar(*format), count++;
 		}
