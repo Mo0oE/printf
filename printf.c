@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 				break;
 
 			if (*format == 'c')
-				_putchar(va_arg(list, int)), count++;
+				num = va_arg(list, int), _putchar(num), count++;
 			else if (*format == '%')
 				_putchar('%'), count++;
 			else if (*format == 's')
