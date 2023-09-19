@@ -9,18 +9,18 @@
 
 int print_reverse(char *str)
 {
-	int len, count = 0;
+	int idx, count = 0;
 
 	if (str)
 	{
-		for (len = 0; *str; str++)
+		for (idx = 0; *str; str++)
 		{
-			len++;
+			idx++;
 			count++;
 		}
 
 		str--;
-		for (; len >= 0; len--, str--)
+		for (; idx >= 0; idx--, str--)
 		{
 			_putchar(*str);
 		}
