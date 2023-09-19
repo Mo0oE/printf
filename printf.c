@@ -9,11 +9,11 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
+	int count = 0, num;
 	char *str;
 	va_list list;
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(list, format);
 	while (*format != '\0' && format)
@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 				_putchar('%'), count++;
 			else if (*format == 's')
 				str = va_arg(list, char *), count += printString(str);
+			else if (*format == 'i' || *format =='d')
+				num = va_arg(list, int), print_number(num) , count += number_nums(num);
 			else
 				_putchar(*format), count++;
 		}

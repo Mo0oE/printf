@@ -75,4 +75,51 @@ int print_binary(int n)
 	return (i);
 }
 
+/**
+ * print_number - function
+ * @n: input
+ * Description: aNOne
+ */
+
+void print_number(int n)
+{
+	unsigned int n1;
+
+	n1 = n;
+	if (n < 0)
+	{
+		_putchar('-');
+		n1 = -n;
+	}
+	if ((n1 / 10) != 0)
+		print_number(n1 / 10);
+	_putchar ('0' + (n1 % 10));
+
+}
+
+/**
+ * number_nums - A function to count numbers in the integer
+ * @n: The input number
+ * Return: How many numbers in this integer
+*/
+
+int number_nums(int n)
+{
+	unsigned int i, count = 1;
+
+	if (n < 0)
+	{
+		i = -n;
+		count++;
+	}
+	else
+		i = n;
+
+	while (i > 10)
+	{
+		count ++;
+		i /= 10;
+	}
+	return (count);
+}
 

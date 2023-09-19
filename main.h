@@ -13,7 +13,8 @@ int _putchar(char str);
 int printString(char *str);
 int printInt(int n);
 int print_binary(int n);
-
+void print_number(int n);
+int number_nums(int n);
 
 int _printf(const char *format, ...);
 
