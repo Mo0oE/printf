@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - a printf-like function for printing a format and all the arguments given
+ * _printf - a printf-like function for printing a format and given arguments
  * @format: the text to be printed with the formats
  * @...: the arguments given
  * Return: number of all printed characters
