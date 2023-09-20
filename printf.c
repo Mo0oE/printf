@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _printf - a printf-like function for printing
- * @format: the text input
- * @...: the argument
+ * _printf - a printf-like function for printing a format and all the arguments given
+ * @format: the text to be printed with the formats
+ * @...: the arguments given
  * Return: number of all printed characters
  */
 
