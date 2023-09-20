@@ -3,8 +3,7 @@
 
 /**
  * printString - function to print strings
- * @str: the input string
- * Description: ...
+ * @str: the input string to be printed
  * Return: number of characters printed
  */
 
@@ -24,7 +23,7 @@ int printString(char *str)
 
 /**
  * _putchar - the function to print characters
- * @str: the input of putchar
+ * @str: A character char or int
  * Return: On success 1 and On error -1
  *
  */
@@ -39,9 +38,9 @@ int _putchar(char str)
 
 /**
  * print_binary - A Function To Print Number in Binary Form
- * @n: The Number To Print
+ * @n: The Number To be Printed
  *
- * Return: The Number of Bytes Printed
+ * Return: The Number of charcters Printed
  */
 
 int print_binary(int n)
@@ -77,9 +76,9 @@ int print_binary(int n)
 }
 
 /**
- * print_number - function
- * @n: input
- * Description: aNOne
+ * print_number - function to print integars
+ * @n: the integar to be printed
+ * Description: a recursive function to print any integar number
  */
 
 void print_number(int n)
